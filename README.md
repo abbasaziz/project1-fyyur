@@ -200,6 +200,6 @@ python3 app.py
 
 ## Author
 
-This project was carried out by Ismaila Lawal Elijah as part of the projects in the ALX-UDACITY Fullstack Web Development Course, and as part of the requirement to be awarded a certificate of completion in Fullstack Web Development.
+This project was carried out by Abbas Aziz as part of the projects in the Fullstack Web Development Course, and as part of the requirement to be awarded a certificate of completion in Fullstack Web Development.
 
-Ismaila Lawal Elijah [ElijahLawal-7](https://github.com/ElijahLawal-7)
+Abbas Aziz [abbasaziz](https://github.com/abbasaziz)
