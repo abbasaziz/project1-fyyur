@@ -260,8 +260,17 @@ def create_venue_submission():
     form = VenueForm(request.form)
     if form.validate():
         try:
-            venue = Venue(name=request.form['name'], city=request.form['city'], state=request.form['state'], address=request.form['address'], phone=request.form['phone'], image_link=request.form['image_link'],
-                          genres=request.form.getlist('genres', type=str), facebook_link=request.form['facebook_link'], website=request.form['website_link'], seeking_talent="seeking_talent" in request.form, seeking_description=request.form['seeking_description'])
+            venue = Venue(name=request.form['name'], 
+                          city=request.form['city'], 
+                          state=request.form['state'], 
+                          address=request.form['address'], 
+                          phone=request.form['phone'], 
+                          image_link=request.form['image_link'],
+                          genres=request.form.getlist('genres', type=str), 
+                          facebook_link=request.form['facebook_link'], 
+                          website=request.form['website_link'], 
+                          seeking_talent="seeking_talent" in request.form, 
+                          seeking_description=request.form['seeking_description'])
             db.session.add(venue)
             db.session.commit()
             # on successful db insert, flash success
@@ -546,9 +555,17 @@ def create_artist_submission():
         try:
             phoneExists = False
             if not Artist.query.filter(Artist.phone == request.form['phone']).count() > 0:
-                artist = Artist(name=request.form['name'], city=request.form['city'], state=request.form['state'], phone=request.form['phone'], image_link=request.form['image_link'],
-                                genres=request.form.getlist('genres', type=str), facebook_link=request.form['facebook_link'], website=request.form['website_link'], seeking_venue='seeking_venue' in request.form, seeking_description=request.form['seeking_description'])
-                db.session.add(artist)
+                artists = Artist(name=request.form['name'], 
+                                city=request.form['city'], 
+                                state=request.form['state'], 
+                                phone=request.form['phone'], 
+                                image_link=request.form['image_link'],
+                                genres=request.form.getlist('genres', type=str), 
+                                facebook_link=request.form['facebook_link'], 
+                                website=request.form['website_link'], 
+                                seeking_venue='seeking_venue' in request.form, 
+                                seeking_description=request.form['seeking_description'])
+                db.session.add(artists)
                 db.session.commit()
                 # on successful db insert, flash success
                 # TODO: on unsuccessful db insert, flash an error instead.

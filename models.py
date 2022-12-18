@@ -71,8 +71,7 @@ class Artist(db.Model):
     seeking_venue = db.Column(db.Boolean, default=False, nullable=False)
     seeking_description = db.Column(db.String(300), nullable=True)
     
-    av_start = db.Column(db.DateTime(), nullable=False)
-    av_end = db.Column(db.DateTime(), nullable=False)
+
     
 
 
