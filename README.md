@@ -200,6 +200,6 @@ python3 app.py
 
 ## Author
 
-This project was carried out by Abbas Aziz as part of the projects in the Fullstack Web Development Course, and as part of the requirement to be awarded a certificate of completion in Fullstack Web Development.
+This project was created by Abbas Aziz as part of the courses in the Udemy Fullstack Web Development Course, as a requirement to be awarded a certificate of completion in this course. Thankful for all the instructors, reviewers and session leads at Udemy.
 
 Abbas Aziz [abbasaziz](https://github.com/abbasaziz)
