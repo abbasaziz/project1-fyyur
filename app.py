@@ -209,8 +209,8 @@ def show_venue(venue_id):
         data['seeking_talent'] = venue_data.seeking_talent
         data['seeking_description'] = venue_data.seeking_description
         data['image_link'] = venue_data.image_link
-        past_shows = []
         upcoming_shows = []
+        past_shows = []
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
         past = db.session.query(Show).join(Artist).filter(
             db.and_(Show.start_time < current_time, Show.venue_id == venue_id)).all()
@@ -449,8 +449,16 @@ def edit_artist(artist_id):
     # TODO: populate form with fields from artist with ID <artist_id>
     try:
         data = Artist.query.filter(Artist.id == artist_id).first()
-        artist_form = ArtistForm(name=data.name, city=data.city, state=data.state, phone=data.phone, image_link=data.image_link, genres=data.genres,
-                                 facebook_link=data.facebook_link, website_link=data.website, seeking_venue=data.seeking_venue, seeking_description=data.seeking_description)
+        artist_form = ArtistForm(name=data.name, 
+                                 city=data.city, 
+                                 state=data.state, 
+                                 phone=data.phone, 
+                                 image_link=data.image_link, 
+                                 genres=data.genres,
+                                 facebook_link=data.facebook_link, 
+                                 website_link=data.website, 
+                                 seeking_venue=data.seeking_venue, 
+                                 seeking_description=data.seeking_description)
     except:
         flash(f"Artist Edit form is currently unaccessible.", category="error")
         abort(500)
@@ -495,8 +503,17 @@ def edit_venue(venue_id):
     # TODO: populate form with values from venue with ID <venue_id>
     try:
         data = Venue.query.filter(Venue.id == venue_id).first()
-        venue_form = VenueForm(name=data.name, city=data.city, state=data.state, phone=data.phone, address=data.address, image_link=data.image_link, genres=data.genres,
-                               facebook_link=data.facebook_link, website_link=data.website, seeking_talent=data.seeking_talent, seeking_description=data.seeking_description)
+        venue_form = VenueForm(name=data.name, 
+                               city=data.city, 
+                               state=data.state, 
+                               phone=data.phone, 
+                               address=data.address, 
+                               image_link=data.image_link, 
+                               genres=data.genres,
+                               facebook_link=data.facebook_link, 
+                               website_link=data.website, 
+                               seeking_talent=data.seeking_talent, 
+                               seeking_description=data.seeking_description)
     except:
         flash(f"Venue Edit form is unavailable at the moment.", category="error")
         abort(500)
